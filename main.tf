@@ -9,7 +9,7 @@ locals {
 }
 
 module "postgres_load_balancer_configs" {
-  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//postgres-load-balancer?ref=v0.14.0"
+  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//postgres-load-balancer?ref=v0.14.2"
   install_dependencies = var.install_dependencies
   haproxy = {
     postgres_nodes_max_count   = var.haproxy.postgres_nodes_max_count
@@ -30,12 +30,12 @@ module "postgres_load_balancer_configs" {
 }
 
 module "prometheus_node_exporter_configs" {
-  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//prometheus-node-exporter?ref=v0.14.0"
+  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//prometheus-node-exporter?ref=v0.14.2"
   install_dependencies = var.install_dependencies
 }
 
 module "chrony_configs" {
-  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//chrony?ref=v0.14.0"
+  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//chrony?ref=v0.14.2"
   install_dependencies = var.install_dependencies
   chrony = {
     servers  = var.chrony.servers
@@ -45,7 +45,7 @@ module "chrony_configs" {
 }
 
 module "fluentd_configs" {
-  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//fluentd?ref=v0.14.0"
+  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//fluentd?ref=v0.14.2"
   install_dependencies = var.install_dependencies
   fluentd = {
     docker_services = [
