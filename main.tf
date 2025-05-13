@@ -9,7 +9,7 @@ locals {
 }
 
 module "postgres_load_balancer_configs" {
-  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//postgres-load-balancer?ref=v0.14.2"
+  source = "git::https://github.com/Ferlab-Ste-Justine/terraform-cloudinit-templates.git//postgres-load-balancer?ref=v0.37.2"
   install_dependencies = var.install_dependencies
   haproxy = {
     postgres_nodes_max_count   = var.haproxy.postgres_nodes_max_count
